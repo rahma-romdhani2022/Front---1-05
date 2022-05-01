@@ -1,0 +1,71 @@
+<body>
+
+<div class="containerRahma">
+    <div [ngClass]="toggleProperty ? 'flipped' : ''" class="card">
+      <div class="front">
+        <img id="imageAdmin" src={{imageAdmin}} alt="profile-img">
+        <h2>{{admin.username}}</h2>
+        <small>{{admin.role}}</small>
+        <ng-content select="flip-card-front"></ng-content>
+        <p id="btnRotate" >
+          <button id="RotateEdite" style="width: 150px;" (click)="toggle()"> Edite Profile &nbsp; 
+             <span id="niveau"><i class="fa fa-pencil"></i></span></button>     
+         </p>
+      </div>
+      <div class="back">
+        <form (ngSubmit)="modifierProfileAdminnn(form)" #form=ngForm>
+          <br><br><br>
+          <div class="avatar-upload">
+            <div class="avatar-edit">
+            <input type='file' id="imageUpload" (change)="onSelectFile($event)" class="select-profile-picture"  accept=".png, .jpg, .jpeg" />
+            
+                  <label for="imageUpload"></label>
+              
+            
+            </div>
+            <div class="avatar-preview">
+              <img id="imagePreview" src={{image}}>
+            </div>
+              </div>
+      <div class="login-dark" style="position: relative;top:-35px">
+          <div class="form-group" style="position: absolute;top: -225px;left:-60px">
+              <input class="form-control" type="text" name="username" placeholder="Identifiant"
+              [(ngModel)]=admin.username ngModel name="usename" required #username="ngModel"
+          
+              style="width: 300px;">
+          </div>
+              <div class="form-group" style="position: absolute;top: -160px;left:-60px">
+                  <input class="form-control" type="email" name="email" placeholder="Email"
+                  [(ngModel)]=admin.email ngModel name="email" 
+                  required #email="ngModel" style="width: 300px;">
+              </div>
+              <div class="form-group"style="position: absolute;top: -95px;left:-60px">
+                  <input id="password-field"  class="form-control" type="password" name="password" 
+                  [(ngModel)]=admin.password ngModel name="password" 
+                  required #password="ngModel" style="width:300px;">
+                  <span toggle="#password-field" class="fa fa-fw fa-eye-slash  toggle-password"
+                  style="position:absolute;margin-top:-28px;margin-left: 303px;" ></span>
+              </div> 
+              <div class="form-group"style="position: absolute;top: -35px;left:-60px">
+                  <input class="form-control" type="text" name="diplome" placeholder="diplome"
+                  [(ngModel)]=admin.diplome ngModel name="diplome" 
+                  required #diplome="ngModel"  style="width: 300px;">
+                
+              </div> 
+          </div>
+          <div align="center" id="btnSave"  style=" background-color: #fff0;"> 
+          <button class="btn btn-success" type="submit" [disabled]="!form.valid">Valider</button>
+          &nbsp;&nbsp;&nbsp;
+          </div>
+      
+      </form>
+        <ng-content select="flip-card-back"></ng-content>
+        <div id="bouttonAnnuler" >
+        <a  class="btn btn-danger" (click)="toggle()">Annuler
+        </a></div>
+       
+      </div>
+    </div>
+  </div>
+   
+</body>

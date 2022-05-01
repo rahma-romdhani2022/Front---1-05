@@ -1,0 +1,308 @@
+/* --------------------------
+  Base
+--------------------------- */
+
+body {
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+/* --------------------------
+  Keyframes
+--------------------------- */
+
+
+@-webkit-keyframes arrowAnimation {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  20% {
+    -webkit-transform: translate(0px, -1px);
+            transform: translate(0px, -1px);
+  }
+  40% {
+    -webkit-transform: translate(0px, .2px);
+            transform: translate(0px, .2px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 1.3px);
+            transform: translate(0px, 1.3px); 
+  }
+}
+
+@keyframes arrowAnimation {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  20% {
+    -webkit-transform: translate(0px, -1px);
+            transform: translate(0px, -1px);
+  }
+  40% {
+    -webkit-transform: translate(0px, .2px);
+            transform: translate(0px, .2px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 1.3px);
+            transform: translate(0px, 1.3px); 
+  }
+}
+
+@-webkit-keyframes scaleAnimation {
+  0% {
+    -webkit-transform: scale(1.01, 1.01);
+            transform: scale(.9, .9);
+  }
+  65% {
+    -webkit-transform: scale(1.01, 1.01);
+            transform: scale(1.01, 1.01);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes scaleAnimation {
+  0% {
+    -webkit-transform: scale(1.01, 1.01);
+            transform: scale(.9, .9);
+  }
+  65% {
+    -webkit-transform: scale(1.01, 1.01);
+            transform: scale(1.01, 1.01);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@-webkit-keyframes fillChange {
+  0% { fill: #F7F7F7; }
+  70% { fill: #EDEDED; }
+  100% { fill: #F7F7F7; } 
+}
+
+@keyframes fillChange {
+  0% { fill: #F7F7F7; }
+  70% { fill: #EDEDED; }
+  100% { fill: #F7F7F7; } 
+}
+
+
+@-webkit-keyframes progressLoader {
+  50% {
+    -webkit-transform: scale(0.4, 1) translate(0px, 0px);
+            transform: scale(0.4, 1) translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translate(0px, 0px);
+            transform: scale(1, 1) translate(0px, 0px);
+  }
+}
+
+@keyframes progressLoader {
+  50% {
+    -webkit-transform: scale(0.4, 1) translate(0px, 0px);
+            transform: scale(0.4, 1) translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translate(0px, 0px);
+            transform: scale(1, 1) translate(0px, 0px);
+  }
+}
+
+/* --------------------------
+  SVG Styles
+--------------------------- */
+
+#upload *{
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+.a {
+  -webkit-animation: fillChange 1 2s cubic-bezier(0.42, 0, 0.58, 1);
+          animation: fillChange 1 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.background {
+  -webkit-animation: scaleAnimation 1 2s cubic-bezier(0.42, 0, 0.58, 1);
+          animation: scaleAnimation 1 2s cubic-bezier(0.42, 0, 0.58, 1);
+
+}
+
+.arrow {
+  -webkit-animation: arrowAnimation 2 1s;
+          animation: arrowAnimation 2 1s;
+}
+
+.progressLoader {
+  -webkit-animation: progressLoader 1s;
+          animation: progressLoader 1s;
+ 
+}
+
+.arrow,
+.progressLoader {
+   -webkit-animation-iteration-count: infinite;
+           animation-iteration-count: infinite;    -webkit-animation-timing-function: ease-out;
+           animation-timing-function: ease-out;
+   -webkit-animation-fill-mode: backwards;
+           animation-fill-mode: backwards;
+}
+
+.dribbble {
+    position: fixed;
+    display: block;
+    right: 30px;
+    bottom: 30px;
+   
+  
+ 
+}
+/********************/
+div.scroll
+{
+
+height:500PX;
+FLOAT: left;
+
+padding: 1%;
+overflow:scroll;
+}
+
+label
+{
+    font-weight: bold;
+
+   color :"#0000FF";
+
+}
+
+
+h1
+{
+    font-size: 40px; 
+    text-align: center;
+    /* Titres de 40 pixels */
+}
+th
+{
+    font-size: 18px; 
+    text-align: center;
+    /* Titres de 40 pixels */
+}
+
+/**************** test *************/
+
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.select-profile-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+
+.profile-pic {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  vertical-align: middle;
+  text-align: center;
+  color: transparent;
+  transition: all .3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.cercle {
+ 
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 165px;
+  left: 141px;
+  background-color: #e7e2e2;
+  border-radius: 50%;
+  display: inline-block;}
+  .profile-pic {
+    color: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+ }
+  .profile-pic input {
+    display: none;
+ }
+  .profile-pic img {
+    position: absolute;
+    object-fit: cover;
+    width: 165px;
+    height: 165px;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, .35);
+    border-radius: 100px;
+    z-index: 0;
+ }
+  .profile-pic .-label {
+    cursor: pointer;
+    height: 165px;
+    width: 165px;
+ }
+  .profile-pic:hover .-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 10000;
+    color: #fafafa;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 100px;
+    margin-bottom: 0;
+ }
+  .profile-pic span {
+    display: inline-flex;
+    padding: 0.2em;
+    height: 2em;
+ }
+
+.pen{
+  position: relative;
+  top: 7px;
+  
+
+} 
